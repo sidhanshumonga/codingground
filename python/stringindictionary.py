@@ -1,3 +1,6 @@
+# created by sidhanshu monga
+# 02 may, 2018
+
 #problem statement : return true if on spliting the input string we get words, exist in the given dictionary
 
 import sys
