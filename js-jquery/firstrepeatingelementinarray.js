@@ -1,5 +1,8 @@
-<!-- Problem statement :  return the first repeating element in the given array-->
+//Problem statement :  return the first repeating element in the given array
 
+
+//two ways to solve this problem
+//solution 1 :
         var submit = function () {
             var array = ['hey', 'how', 'do', 'you', 'doing', 'hey', 'you', 'yes'];
             var hashmap = [];
@@ -12,7 +15,7 @@
                 }
             }
         };
-
+//solution 2 :
         var submit2 = function () {
             var array = ['hey', 'how', 'do', 'you', 'doing', 'hey', 'you', 'yes'];
 
