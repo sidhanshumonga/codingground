@@ -3,11 +3,12 @@
 import sys
 input = ""
 for line in sys.stdin:
-    input = line
+    input = line #taking input : ilovespicy
 dict = {"i" : "1","love" : "1","indian" : "1","spicy" : "1","food" : "1"}
 flag = False
 check = ""
 
+#looping through input string
 for a in input:
     check = check + a
     # print check
