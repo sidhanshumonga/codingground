@@ -1,3 +1,6 @@
+// created by sidhanshu monga
+// 02 may, 2018
+
 //Problem Statement : return time in 24 hour format according to given input
 
 
