@@ -1,3 +1,6 @@
+// created by sidhanshu monga
+// 02 may, 2018
+
 //Problem statement :  return the first repeating element in the given array
 
 
