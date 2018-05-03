@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 03 may, 2018
+
+//Problem statement :  return the factorial of a number
+
 #include <iostream>
 #include<stdio.h>
 
