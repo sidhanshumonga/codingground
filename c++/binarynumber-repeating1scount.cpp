@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 03 may, 2018
+
+//Problem statement :  return the maximum number of repeating 1s in binary number
+
 using System;
 using System.Collections.Generic;
 using System.IO;
