@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 03 may, 2018
+
+//Problem statement :  convert time string in words string
+
 using System.IO;
 using System;
 using System.Collections.Generic;
