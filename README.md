@@ -7,3 +7,5 @@ Here I will be putting my code/programs which I practice usually in C/C++, pytho
 - you can ask any program to write from scratch here
 
 - please do not commit your code without testing it.
+
+update as 08/05/18 :  Now programs are also available in unix/shell scripting.
