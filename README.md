@@ -9,3 +9,5 @@ Here I will be putting my code/programs which I practice usually in C/C++, pytho
 - please do not commit your code without testing it.
 
 update as on 08/05/18 :  Now programs are also available in unix/shell scripting.
+
+update as on 10/05/18 : Now programs are also available in c programming.
