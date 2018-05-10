@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 10 may, 2018
+
+//Problem statement : whether the number is  plaindrome or not
+
 #include <stdio.h>
 int main()
 {

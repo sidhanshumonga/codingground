@@ -1,3 +1,8 @@
+# created by sidhanshu monga
+# 08 may, 2018
+
+#Problem statement :  find largest number in given three numbers
+
 echo "enter first number"
 read first
 echo "enter second number"

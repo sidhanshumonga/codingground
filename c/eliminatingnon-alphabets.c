@@ -1,3 +1,9 @@
+// created by sidhanshu monga
+// 10 may, 2018
+
+//Problem statement : eliminating all characters except alphabets
+
+#include <stdio.h>
 int main()
 {
     char line[150];

@@ -1,3 +1,8 @@
+# created by sidhanshu monga
+# 08 may, 2018
+
+#Problem statement :  convert time format 12 hour to 24 hours format
+
 input = "12:25:26AM"
 
 if(input[8]=="P"):

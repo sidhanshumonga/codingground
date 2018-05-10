@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 10 may, 2018
+
+//Problem statement : write program for fibbonacci series
+
 #include <stdio.h>
 int main()
 {

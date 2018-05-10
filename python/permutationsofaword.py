@@ -1,3 +1,8 @@
+# created by sidhanshu monga
+# 08 may, 2018
+
+#Problem statement :  find permutations of particular word
+
 def permute(strr,k,m):
     if(k == m):
         print "".join(strr), 

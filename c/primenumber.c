@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 10 may, 2018
+
+//Problem statement :  check whether the given number is prime or not
+
 #include <stdio.h>
 int main()
 {

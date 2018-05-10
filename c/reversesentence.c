@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 10 may, 2018
+
+//Problem statement :  reverse the given sentence
+
 #include <stdio.h>
 void reverseSentence();
 

@@ -1,3 +1,8 @@
+# created by sidhanshu monga
+# 08 may, 2018
+
+#Problem statement :  find sum of given numbers
+
 echo -n "Enter number : "
 read n
 sd=0

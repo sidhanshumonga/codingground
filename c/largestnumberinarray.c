@@ -1,3 +1,8 @@
+// created by sidhanshu monga
+// 10 may, 2018
+
+//Problem statement : find the largest number in the array
+
 #include <stdio.h>
 
 int main()
