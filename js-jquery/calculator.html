@@ -1,0 +1,241 @@
+<html>
+
+<head>
+    <title>
+        Calculator
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <script>
+        //code for keypress
+        $(document).ready(function () {
+            $("body").keyup(function (event) {
+                var number = 0;
+                if (event.keyCode >= 96 && event.keyCode <= 105) {
+                    number = event.keyCode - 96;
+                    var map = { 'innerText': number };
+                    getvalue(map);
+                    getfun(map);
+                }
+                else if (event.keyCode >= 48 && event.keyCode <= 57) {
+                    number = event.keyCode - 48;
+                    var map = { 'innerText': number };
+                    getvalue(map);
+                    getfun(map);
+                }
+                else if (event.keyCode == 8) {
+                    del();
+                }
+                else if(event.keyCode == 106 || event.keyCode == 107 || event.keyCode == 109 || event.keyCode == 111 || event.keyCode == 110){
+                    var key = "";
+                    if(event.keyCode == 106)key="x";
+                    if(event.keyCode == 107)key="+";
+                    if(event.keyCode == 109)key="-";
+                    if(event.keyCode == 110)key=".";
+                    if(event.keyCode == 111)key="/";
+
+                    var map = { 'innerText': key };
+                    getvalue(map);
+                    getfun(map);
+                }
+
+            });
+        });
+
+        var getvalue = function (td) {
+            var value = td.innerText;
+            var preval = $("#smalldisplay").text();
+            if (preval === undefined) { $("#smalldisplay").text(value); }
+            else { $("#smalldisplay").text(preval + value); }
+        };
+        var cal;
+        var getfun = function (td) {
+            var value = td.innerText;
+            var num = 0;
+            if ($("#maindisplay").text() != "") {
+                cal = parseInt($("#maindisplay").text())
+            }
+
+            if (value != "+" && value != "x" && value != "-" && value != "/") {
+                num = parseInt(value);
+                //    / $("#maindisplay").text(num);
+                var sign = $("#smalldisplay").text();
+                var expr = sign.substring(sign.length - 2, sign.length - 1);
+                if (expr == "+") {
+                    num = num + cal;
+                    $("#maindisplay").text(num);
+                }
+                else if (expr == "/") {
+                    num = cal / num;
+                    $("#maindisplay").text(num);
+                }
+                else if (expr == "x") {
+                    num = cal * num;
+                    $("#maindisplay").text(num);
+                }
+                else if (expr == "-") {
+                    num = cal - num;
+                    $("#maindisplay").text(num);
+                }
+                else {
+                    var preval = $("#maindisplay").text();
+                    if (preval === undefined) { $("#maindisplay").text(value); }
+                    else { $("#maindisplay").text(preval + value); }
+                }
+            }
+            else {
+                var sign = $("#smalldisplay").text();
+                var expr = sign.substring(sign.length - 2, sign.length - 1);
+                if (expr == "+" || expr == "x" || expr == "-" || expr == "/") {
+                    $("#smalldisplay").text(sign.substring(0, sign.length - 2) + value);
+                }
+                $("#maindisplay").text(cal);
+            }
+
+
+        };
+
+        var del = function () {
+            var value = $("#smalldisplay").text();
+            var vu = value.substring(0, value.length - 1);
+            $("#smalldisplay").text(vu);
+            if (value != "+" && value != "x" && value != "-" && value != "/") {
+                var value = $("#maindisplay").text();
+                var vu = value.substring(0, value.length - 1);
+                $("#maindisplay").text(vu);
+            }
+        };
+
+        var delall = function () {
+            $("#smalldisplay").text("");
+            $("#maindisplay").text("");
+        };
+    </script>
+    <style>
+        body {
+            background-color: #bbbbbb;
+        }
+
+        .custom-front tr td:hover{
+            opacity: 0.8;
+            background-color: beige;
+            color:black;
+        }
+
+        .custom-back {
+            width: 18%;
+            top: 19.5%;
+            left: 41%;
+            text-align: center;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .custom-back tr td {
+            width: 50px;
+            height: 50px;
+        }
+
+        .custom-front {
+            width: 20%;
+            top: 35%;
+            left: 40%;
+            color: white;
+            text-align: center;
+            position: absolute;
+            cursor: pointer;
+            background-color: black;
+            opacity: 0.6;
+        }
+
+        .custom-front tr td {
+            width: 50px;
+            height: 50px;
+        }
+
+        td {
+            border: none !important;
+            font-weight: normal;
+            font-size: 19px;
+            font-family: Century Gothic;
+        }
+
+        #smalldisplay {
+            text-align: right;
+            font-size: 18px;
+        }
+
+        #maindisplay {
+            text-align: right;
+            font-size: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <table class="table custom-back">
+            <tr>
+                <td id="smalldisplay" style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td id="maindisplay" style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: orange">=</td>
+            </tr>
+        </table>
+        <table class="table custom-front">
+            <tr>
+                <td onclick="delall(this);">c</td>
+                <td onclick="del();">del</td>
+                <td onclick="getvalue(this);">_/</td>
+                <td onclick="perc();">%</td>
+            </tr>
+            <tr>
+                <td onclick="getvalue(this);getfun(this);">9</td>
+                <td onclick="getvalue(this);getfun(this);">8</td>
+                <td onclick="getvalue(this);getfun(this);">7</td>
+                <td onclick="getvalue(this);getfun(this);">/</td>
+            </tr>
+            <tr>
+                <td onclick="getvalue(this);getfun(this);">6</td>
+                <td onclick="getvalue(this);getfun(this);">5</td>
+                <td onclick="getvalue(this);getfun(this);">4</td>
+                <td onclick="getvalue(this);getfun(this);">x</td>
+            </tr>
+            <tr>
+                <td onclick="getvalue(this);getfun(this);">3</td>
+                <td onclick="getvalue(this);getfun(this);">2</td>
+                <td onclick="getvalue(this);getfun(this);">1</td>
+                <td onclick="getvalue(this);getfun(this);">-</td>
+            </tr>
+            <tr>
+                <td onclick="getvalue(this);getfun(this);">00</td>
+                <td onclick="getvalue(this);getfun(this);">0</td>
+                <td onclick="getvalue(this);getfun(this);">.</td>
+                <td onclick="getvalue(this);getfun(this);">+</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
